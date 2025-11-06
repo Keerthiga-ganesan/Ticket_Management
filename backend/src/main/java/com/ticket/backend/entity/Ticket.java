@@ -16,9 +16,16 @@ public class Ticket {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "customer_name")
     private String customerName;
+
+    @Column(name = "customer_phone")
     private String customerPhone;
+
+    @Column(name = "product_name")
     private String productName;
+
+    @Column(name = "issue_description")
     private String issueDescription;
 
     @Enumerated(EnumType.STRING)
@@ -27,9 +34,15 @@ public class Ticket {
     @Enumerated(EnumType.STRING)
     private Status status;
 
-    private Long createdBy;   // staff id
-    private Long assignedTo;  // technician id
+    @Column(name = "created_by")
+    private Long createdBy; // staff id
 
+    @Column(name = "assigned_to")
+    private Long assignedTo; // technician id
+
+    @Column(name = "created_at")
     private LocalDateTime createdAt;
+
+    @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 }
